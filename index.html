@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Soumia KTIB, etudiante en design graphique">
+    <title>Portfolio - Soumia KTIB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FFFAF0; /* Pêche doux comme couleur de fond principale */
+            color: #333333; /* Gris foncé pour le texte */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #FFB6C1; /* Pêche doux */
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul li a:hover {
+            color: #A1D8E6; /* Bleu pastel au survol */
+        }
+
+        /* Header Section */
+        header {
+            background-image: url('images/dried-floral-background-natural-design-space.jpg');
+            background-size: cover;
+            background-position: center center;
+            color: white;
+            text-align: center;
+            padding: 30px 20px 100px;
+            border-bottom: 5px solid #A1D8E6; /* Bleu pastel */
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3); /* Fond semi-transparent noir */
+            z-index: -1;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            font-family: 'Source Serif Pro', serif;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+            color: #FFB6C1; /* Pêche doux */
+        }
+
+        header h1:hover {
+            color: #FF69B4; /* Florissant au survol */
+        }
+
+        header p {
+            font-size: 1.4em;
+            margin-top: 15px;
+            color: #A1E3D8; /* Vert menthe clair */
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        header p span {
+            font-weight: bold;
+            color: #333333; /* Gris foncé pour la deuxième phrase */
+        }
+
+        header p:hover {
+            color: #FF69B4; /* Rose florissant au survol */
+            cursor: pointer;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #FFF8F0; /* Pêche clair pour la section "About" */
+            padding: 100px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        #about h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #FF69B4; /* Florissant */
+            background-color: #A1E3D8; /* Vert menthe clair */
+            padding: 15px;
+            display: inline-block;
+            border-radius: 8px;
+        }
+
+        #about p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #333333; /* Gris foncé */
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: #FFFFFF;
+            padding: 100px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        #projects h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            color: #FF69B4; /* Florissant */
+            background-color: #A1E3D8; /* Vert menthe clair */
+            padding: 15px;
+            display: inline-block;
+            border-radius: 8px;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            justify-items: center;
+        }
+
+        .project img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .project:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        #contact {
+            background-image: url('images/dried-floral-background-natural-design-space.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #FF69B4; /* Florissant */
+            padding: 20px;
+            background-color: #FADADD; /* Pêche pastel */
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        form {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        form button {
+            background-color: #A1D8E6; /* Bleu pastel */
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #FF69B4; /* Florissant au survol */
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            background-color: #FFB6C1; /* Pêche doux */
+            color: white;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav>
+        <ul>
+            <li><a href="#about">A propos</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Bonjour, je suis Soumia KTIB</h1>
+        <p><span>Etudiante en design graphique</span></p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>A propos de moi</h2>
+        <p>Je suis une etudiante passionnee par le design graphique et les arts visuels. Actuellement en premiere annee a la faculte des lettres et arts, je cherche a developper mes competences en conception visuelle et design.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Mes projets</h2>
+        <div class="project-gallery">
+            <div class="project">
+                <img src="images/1000032834.jpg" alt="Projet 1">
+            </div>
+            <div class="project">
+                <img src="images/1000032835.jpg" alt="Projet 2">
+            </div>
+            <div class="project">
+                <img src="images/Tasty_20241117_141605_0000.jpg" alt="Projet 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contactez-moi</h2>
+        <form action="#" method="POST">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Soumia KTIB - Tous droits reserves</p>
+    </footer>
+
+</body>
+</html>
